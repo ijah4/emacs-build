@@ -15,7 +15,7 @@ jobs:
     name: Prepare build version
     runs-on: ubuntu-latest
     env:
-      EMACS_REPO: https://github.com/kiennq/emacs.git
+      EMACS_REPO: https://github.com/ijah4/emacs.git
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
@@ -87,7 +87,7 @@ jobs:
       # This is the shortest job, but in this case it pulls all MSYS/MINGW64
       - name: Clone Emacs
         if: runner.os == 'Windows'
-        run: .\emacs-build.cmd --clone --repo https://github.com/kiennq/emacs.git --branch ${{ needs.prepare_env.outputs.commit }}
+        run: .\emacs-build.cmd --clone --repo https://github.com/ijah4/emacs.git --branch ${{ needs.prepare_env.outputs.commit }}
 
       - name: Clone Emacs
         if: runner.os != 'Windows'
